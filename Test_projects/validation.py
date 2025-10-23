@@ -1,3 +1,5 @@
+"""Might rename file as utils.py by convention. Perhaps find ways to shorten and condense the number of methods in class."""
+
 class Validation:
     def __init__(self, x_coordinate, y_coordinate, height, width, radius):
         self.x_coordinate = x_coordinate
