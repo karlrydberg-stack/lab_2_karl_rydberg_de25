@@ -7,6 +7,8 @@ class Validation:
         self.height = height
         self.width = width
         self.radius = radius
+        self.area_circle = self.radius * self.radius * 3.14
+        self.area_rectangle = self.width * self.height
     
     @property
     def x_coordinate(self):

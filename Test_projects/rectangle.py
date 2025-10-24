@@ -6,6 +6,7 @@ class Rectangle(Validation):
         self.y_coordinate = y_coordinate
         self.width = width
         self.height = height
+        self.arealo = self.width * self.height
     
     @property
     def area(self):
@@ -20,28 +21,16 @@ class Rectangle(Validation):
         self.y_coordinate = new_y
     
     def __lt__(self, other):
-        area1 = self.width * self.height
-        area2 = other.width * other.height
-        if area1 < area2:
-            return True
-        else:
-            return False
+        return self.arealo < other.arealo
+    
     def __eq__(self, other):
-        area1 = self.width * self.height
-        area2 = other.width * other.height
-        if area1 == area2:
-            return True
-        else:
-            return False
+        return self.arealo == other.arealo
     
-    
-
     def __str__(self):
         return f"X-coordinate = {self.x_coordinate}\nY-coordinate = {self.y_coordinate}\nWidth = {self.width}\nHeight = {self.height}"
 
 
-rect1 = Rectangle(1, 2, -1, 4)
-
-rect2 = Rectangle(2, 3, 4, 5)
+rect1 = Rectangle(1, 1, 1, 1)
+rect2 = Rectangle(1, 1, 1, 1)
 
 print(rect1 == rect2)
