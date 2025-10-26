@@ -1,56 +1,45 @@
-"""Might rename file as utils.py by convention. Perhaps find ways to shorten and condense the number of methods in class."""
-
 class Validation:
-    def __init__(self, x_coordinate, y_coordinate, height, width, radius):
-        self.x_coordinate = x_coordinate
-        self.y_coordinate = y_coordinate
-        self.height = height
-        self.width = width
-        self.radius = radius
-        self.area_circle = self.radius * self.radius * 3.14
-        self.area_rectangle = self.width * self.height
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    @property
+    def x(self):
+        return self._x
+    @x.setter 
+    def x(self, new_x):
+        if not isinstance(new_x, (int, float)):
+            raise TypeError("Coordinate must be an integer or float")
+        else:
+            if new_x > 10 or new_x < -10:
+                raise ValueError("Acceptable range is between 10 and -10")
+        self._x = new_x
+    @property
+    def y(self):
+        return self._y
+    @y.setter
+    def y(self, new_y):
+        if not isinstance(new_y, (int, float)):
+            raise TypeError("Coordinate must be an integer or float")
+        else:
+            if new_y > 10 or new_y < -10:
+                raise ValueError("Acceptable range is between 10 and -10")
+        self._y = new_y
+    def __eq__(self, other):
+        return self.area_ == other.area_
+    def __lt__(self, other):
+        return self.area_ < other.area_
+    def __gt__(self, other):
+        return self.area_ > other.area_
+    def __le__(self, other):
+        return self.area_ <= other.area_
+    def __ge__(self, other):
+        return self.area_ >= other.area_
+    def translate(self, new_x, new_y):
+        if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
+            raise TypeError(f"Coordinates must be int or float")
+        else:
+            if 10 < new_x < -10 or 10 < new_y < -10:
+                raise ValueError("Acceptable range for coordinates is between 10 and -10")
+        self.x = new_x
+        self.y = new_y
     
-    @property
-    def x_coordinate(self):
-        return self._x_coordinate
-    @x_coordinate.setter
-    def x_coordinate(self, new_x):
-        if not isinstance(new_x, (float, int)):
-            raise ValueError(f"X-coordinate must be an integer or float, not '{new_x}'")
-        self._x_coordinate = new_x
-    
-    @property
-    def y_coordinate(self):
-        return self._y_coordinate
-    @y_coordinate.setter
-    def y_coordinate(self, new_y):
-        if not isinstance(new_y, (float, int)):
-            raise ValueError(f"Y-coordinate must be an integer or float, not '{new_y}'")
-        self._y_coordinate = new_y
-
-    @property
-    def height(self):
-        return self._height
-    @height.setter
-    def height(self, new_height):
-        if not isinstance(new_height, (float, int)):
-            raise ValueError(f"Height must be an integer or float, not '{new_height}'")
-        self._height = new_height
-    
-    @property
-    def width(self):
-        return self._width
-    @width.setter
-    def width(self, new_width):
-        if not isinstance(new_width, (float, int)):
-            raise ValueError(f"Width must be an integer or float, not '{new_width}'")
-        self._width = new_width
-    
-    @property
-    def radius(self):
-        return self._radius
-    @radius.setter
-    def radius(self, new_radius):
-        if not isinstance(new_radius, (float, int)):
-            raise ValueError(f"Radius must be an integer or float, not '{new_radius}'")
-        self._radius = new_radius
