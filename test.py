@@ -1,9 +1,12 @@
+from matplotlib.patches import Rectangle, Circle
+import matplotlib.pyplot as plt
+
 class Circle_:
     def __init__(self, radius, x=0, y=0):
         self.x = x
         self.y = y
         self.radius = radius
-        self.area_ = self.radius * self.radius * 3.14
+        
     @property
     def area_(self):
         return self.radius * self.radius * 3.14
@@ -72,6 +75,9 @@ class Circle_:
             return True
         else:
             return False
+    def draw_shape(self, graph):
+        circle_object = Circle((self.x, self.y), self.radius)
+        graph.add_patch(circle_object)
 
 
 
@@ -81,7 +87,7 @@ class Rectangle_:
         self.y = y
         self.height = height
         self.width = width
-        self.area_ = self.height * self.width
+        
     
     @property
     def area_(self):
@@ -161,10 +167,21 @@ class Rectangle_:
             return True
         else:
             return False
-area_check = Rectangle_(1, 1)
-area_check.area_=5
-print(area_check.area_)
-
+    def draw_shape(self, graph):
+        rectangle_object = Rectangle((self.x - self.width/2, self.y - self.height/2), self.width, self.height)
+        graph.add_patch(rectangle_object)
+circle1 = Circle_(0.1, 2, 2)
+circle2 = Circle_(1, 4, 4)
+rectangle1 = Rectangle_(1, 1, 7, 7)
+rectangle2 = Rectangle_(1, 1, -10, -6)
+fig, graph= plt.subplots()
+shapes = [circle1, circle2, rectangle1, rectangle2]
+for iterator in shapes: 
+    iterator.draw_shape(graph)
+graph.set_xlim(-10, 10)
+graph.set_ylim(-10, 10)
+plt.grid(True)
+plt.show()
 
 class Sphere:
     def __init__(self, radius, x=0, y=0):
