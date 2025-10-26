@@ -1,8 +1,8 @@
-from validation import Validation
+from validation import BaseClassShapes
 from matplotlib.patches import Circle
 
 
-class CircleObject(Validation):
+class CircleObject(BaseClassShapes):
     def __init__(self, radius, x=0, y=0):
         super().__init__(x, y)
         self.radius = radius

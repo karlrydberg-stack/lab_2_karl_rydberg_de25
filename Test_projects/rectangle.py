@@ -1,7 +1,7 @@
-from validation import Validation
+from validation import BaseClassShapes
 from matplotlib.patches import Rectangle 
 
-class RectangleObject(Validation):
+class RectangleObject(BaseClassShapes):
     def __init__(self, height, width, x=0, y=0):
         super().__init__(x, y)
         self.height = height
