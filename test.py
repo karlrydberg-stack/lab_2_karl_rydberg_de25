@@ -1,12 +1,12 @@
-import matplotlib as plt
-from matplotlib.patches import Rectangle, Circle
-
-class Circle:
+class Circle_:
     def __init__(self, radius, x=0, y=0):
         self.x = x
         self.y = y
         self.radius = radius
-    
+        self.area_ = self.radius * self.radius * 3.14
+    @property
+    def area_(self):
+        return self.radius * self.radius * 3.14
     @property
     def x(self):
         return self._x
@@ -46,15 +46,15 @@ class Circle:
     def perimeter(self):
         return f"Perimeter of circle = {self.radius * 2 * 3.14}"
     def __eq__(self, other):
-        return self.radius == other.radius
+        return self.area_ == other.area_
     def __lt__(self, other):
-        return self.radius < other.radius
+        return self.area_ < other.area_
     def __gt__(self, other):
-        return self.radius > other.radius
+        return self.area_ > other.area_
     def __le__(self, other):
-        return self.radius <= other.radius
+        return self.area_ <= other.area_
     def __ge__(self, other):
-        return self.radius >= other.radius
+        return self.area_ >= other.area_
     def __repr__(self):
         return f"Circle({self.x}, {self.y})"
     def __str__(self):
@@ -75,8 +75,7 @@ class Circle:
 
 
 
-
-class Rectangle:
+class Rectangle_:
     def __init__(self, height, width, x=0, y=0):
         self.x = x
         self.y = y
@@ -84,6 +83,9 @@ class Rectangle:
         self.width = width
         self.area_ = self.height * self.width
     
+    @property
+    def area_(self):
+        return self.height * self.width
     @property
     def x(self):
         return self._x
@@ -159,3 +161,15 @@ class Rectangle:
             return True
         else:
             return False
+area_check = Rectangle_(1, 1)
+area_check.area_=5
+print(area_check.area_)
+
+
+class Sphere:
+    def __init__(self, radius, x=0, y=0):
+        self.radius = radius
+        self.x = x
+        self.y = y
+        self.volume = 4/3 * 3.14 * self.radius**3
+
