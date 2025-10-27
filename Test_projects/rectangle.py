@@ -1,8 +1,8 @@
-from validation import BaseClassShapes
+from base_class import BaseClassShapes
 from matplotlib.patches import Rectangle 
 
 class RectangleObject(BaseClassShapes):
-    def __init__(self, height, width, x=0, y=0):
+    def __init__(self, width, height, x=0, y=0):
         super().__init__(x, y)
         self.height = height
         self.width = width

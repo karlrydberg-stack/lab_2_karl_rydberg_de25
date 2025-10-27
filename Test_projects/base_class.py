@@ -42,8 +42,5 @@ class BaseClassShapes:
         else:
             if 10 < new_x < -10 or 10 < new_y < -10:
                 raise ValueError("Acceptable range for coordinates is between 10 and -10")
-        plt.arrow(self.x, self.y, new_x, new_y, width=0.05)
         self.x = new_x
         self.y = new_y
-
-    

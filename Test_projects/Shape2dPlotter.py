@@ -2,27 +2,24 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Circle
 from circle import CircleObject
 from rectangle import RectangleObject
-
-class Shape2DPlotter:
+from base_class import BaseClassShapes
+class Shape2DPlotter(BaseClassShapes):
     def __init__(self, shape_list):
         self.shape_list = shape_list
+
     def show_plot(self):
-        fig, graph= plt.subplots()
+        fig, self.graph= plt.subplots()
         for iterator in self.shape_list: 
-            iterator.draw_shape(graph)
-        graph.set_xlim(-10, 10)
-        graph.set_ylim(-10, 10)
+            iterator.draw_shape(self.graph)
+        self.graph.set_xlim(-10, 10)
+        self.graph.set_ylim(-10, 10)
         plt.grid(True)
         plt.show()
+    def draw_arrow(self, new_x, new_y):
+        arrow_object = plt.arrow(self.x, self.y, new_x - self.x, new_y - self.y)
+        self.graph.add_patch(arrow_object)
 
-circle1 = CircleObject(1, 2, 2)
-circle1.translate(4, 4)
-circle2 = CircleObject(1, 4, 4)
-rectangle1 = RectangleObject(1, 1, 7, 7)
-rectangle2 = RectangleObject(1, 1, -10, -6)
-rectangle3 = RectangleObject(2, 1, 2, 2)
-shape_list= [circle1, circle2]
-
-
-d = Shape2DPlotter(shape_list)
-d.show_plot()
+rect1 = RectangleObject(10, 2)
+lista = [rect1]
+a = Shape2DPlotter(lista)
+a.show_plot()
