@@ -18,7 +18,6 @@ class CubeObject(BaseClassShapes):
         elif new_side <= 0:
             raise ValueError("Height must be greater than 0")
         self._side = new_side
-    
     @property
     def area(self):
         return f"Surface area of cube = {self.side * self.side * 6}"

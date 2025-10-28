@@ -1,6 +1,6 @@
 from base_class import BaseClassShapes
 from matplotlib.patches import Rectangle 
-
+import matplotlib.pyplot as plt
 class RectangleObject(BaseClassShapes):
     def __init__(self, width, height, x=0, y=0):
         super().__init__(x, y)
