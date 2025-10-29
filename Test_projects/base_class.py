@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 
 class BaseClassShapes:
-    def __init__(self, x, y):
+    def __init__(self, x=0, y=0, arrow_list=[]):
         self.x = x
         self.y = y
+        self.arrow_list = arrow_list
     @property
     def x(self):
         return self._x
@@ -36,11 +37,12 @@ class BaseClassShapes:
         return self.area_ <= other.area_
     def __ge__(self, other):
         return self.area_ >= other.area_
-    def translate(self, new_x, new_y, graph):
+    def translate(self, new_x, new_y):
         if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
             raise TypeError(f"Coordinates must be int or float")
         else:
             if 10 < new_x < -10 or 10 < new_y < -10:
                 raise ValueError("Acceptable range for coordinates is between 10 and -10")
+        self.arrow_list.append((self.x, self.y, new_x - self.x, new_y - self.y))
         self.x = new_x
         self.y = new_y
