@@ -46,5 +46,5 @@ class RectangleObject(BaseClassShapes):
         else:
             return False
     def draw_shape(self, graph):
-        rectangle_object = Rectangle((self.x - self.width/2, self.y - self.height/2), self.width, self.height)
+        rectangle_object = Rectangle((self.x - self.width/2, self.y - self.height/2), self.width, self.height, fill=False)
         graph.add_patch(rectangle_object)

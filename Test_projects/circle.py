@@ -36,5 +36,5 @@ class CircleObject(BaseClassShapes):
         else:
             return False
     def draw_shape(self, graph):
-        circle_object = Circle((self.x, self.y), self.radius)
+        circle_object = Circle((self.x, self.y), self.radius, fill=False)
         graph.add_patch(circle_object)
