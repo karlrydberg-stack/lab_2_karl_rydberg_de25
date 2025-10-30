@@ -10,7 +10,7 @@ class CircleObject(BaseClassShapes):
         self.radius = radius
         
     @property
-    def area_(self): # This method would generally not be called by user, rather used by the parent class to compare areas of different objects 
+    def area_(self): # This method would generally not be called by the user, rather used by the parent class to compare areas of different objects 
         return self.radius * self.radius * 3.14
     @property
     def radius(self):
@@ -39,6 +39,6 @@ class CircleObject(BaseClassShapes):
             return True
         else:
             return False
-    def draw_shape(self, graph): # This method would not be called by the user, but provide data to the plotting class 
+    def draw_shape(self, graph): # This method would not be called directly by the user, but provide data to the plotting class 
         circle_object = Circle((self.x, self.y), self.radius, fill=False)
         graph.add_patch(circle_object)
