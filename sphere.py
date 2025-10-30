@@ -31,7 +31,7 @@ class SphereObject(BaseClassShapes):
     def __str__(self):
         return f"Sphere object with coordinates ({self.x}, {self.y}) and radius {self.radius}"
     def unit_sphere(self):
-        if self.x == 0 and self.y == 0 and self.radius == 1:
+        if self.radius == 1:
             return True
         else:
             return False

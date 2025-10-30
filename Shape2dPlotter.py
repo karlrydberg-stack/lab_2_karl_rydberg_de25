@@ -19,12 +19,3 @@ class Shape2DPlotter(BaseClassShapes):
         self.graph.set_ylim(-10, 10)
         plt.grid(True)
         plt.show()
-
-rect1 = RectangleObject(1, 1, 2, 2)
-rect1.translate(3, 3)
-rect2 = RectangleObject(4, 4, -2, -2)
-circle1 = CircleObject(1, 9, 9)
-circle1.translate(7, 7)
-lista_shape = [rect1, rect2, circle1]
-a = Shape2DPlotter(lista_shape)
-a.show_plot()

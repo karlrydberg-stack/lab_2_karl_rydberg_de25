@@ -39,7 +39,7 @@ class RectangleObject(BaseClassShapes):
     def __repr__(self):
         return f"Rectangle({self.x}, {self.y})"
     def __str__(self):
-        return f"Rectangle object with coordinates ({self.x}, {self.y})"
+        return f"Rectangle object with coordinates ({self.x}, {self.y}) with width {self.width} and height {self.height}"
     def check_square(self):
         if self.height == self.width:
             return True

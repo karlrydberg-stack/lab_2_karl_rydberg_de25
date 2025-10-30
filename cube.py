@@ -32,7 +32,7 @@ class CubeObject(BaseClassShapes):
     def __str__(self):
         return f"Cube object with coordinates ({self.x}, {self.y}) and side {self.side}"
     def unit_cube(self):
-        if self.x == 0 and self.y == 0 and self.side == 1:
+        if self.side == 1:
             return True
         else:
             return False
