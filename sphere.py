@@ -39,7 +39,7 @@ class SphereObject(BaseClassShapes):
             return True
         else:
             return False
-    def translate(self, new_x, new_y):
+    def translate(self, new_x: int|float, new_y: int|float):
         if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
             raise TypeError(f"Coordinates must be int or float")
         else:
