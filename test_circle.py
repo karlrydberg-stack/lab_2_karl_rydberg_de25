@@ -22,6 +22,17 @@ def test_string_in_init_fails():
 def test_empty_init_fails():
     with raises(TypeError):
         CircleObject()
+
 def test_bool_in_init_fails():
     with raises(TypeError):
         CircleObject(True, True, True)
+
+def test_circle_area_valid():
+    circle = CircleObject(1, 1, 1)
+    expected_area = 1 * 1 * 3.14
+    assert circle.area_ == expected_area
+
+def test_circle_area_fails():
+    circle = CircleObject(2, 1, 1)
+    unexpected_area = 1 * 1 * 3.14
+    assert circle.area_ != unexpected_area

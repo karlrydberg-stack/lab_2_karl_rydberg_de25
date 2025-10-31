@@ -26,3 +26,13 @@ def test_empty_init_fails():
 def test_bool_in_init_fails():
     with raises(TypeError):
         CubeObject(True, False, True)
+
+def test_cube_area_valid():
+    cube = CubeObject(1, 1, 1)
+    expected_area = 1 * 1 * 6
+    assert cube.area_ == expected_area
+
+def test_cube_area_fails():
+    cube = CubeObject(2, 1, 1)
+    unexpected_area = 1 * 1 * 6
+    assert cube.area_ != unexpected_area

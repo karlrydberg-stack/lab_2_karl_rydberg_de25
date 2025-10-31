@@ -27,3 +27,13 @@ def test_empty_init_fails():
 def test_bool_in_init_fails():
     with raises(TypeError):
         RectangleObject(True, True, False, True)
+
+def test_rectangle_area_valid():
+    rectangle = RectangleObject(1, 3, 1, 4)
+    expected_area = 1 * 3
+    assert rectangle.area_ == expected_area
+
+def test_rectangle_area_fails():
+    rectangle = RectangleObject(2, 1, 1, 5)
+    unexpected_area = 1 * 9 * 2
+    assert rectangle.area_ != unexpected_area

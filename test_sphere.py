@@ -22,6 +22,17 @@ def test_string_in_init_fails():
 def test_empty_init_fails():
     with raises(TypeError):
         SphereObject()
+
 def test_bool_in_init_fails():
     with raises(TypeError):
         SphereObject(True, True, True)
+
+def test_sphere_area_valid():
+    sphere = SphereObject(3, 1, 1)
+    expected_area = 3 * 3 * 3.14 * 4
+    assert sphere.area_ == expected_area
+
+def test_sphere_area_fails():
+    sphere = SphereObject(10, 1, 1)
+    unexpected_area = 1 * 1 * 6 * 9
+    assert sphere.area_ != unexpected_area
