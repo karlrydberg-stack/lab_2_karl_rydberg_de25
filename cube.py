@@ -14,7 +14,7 @@ class CubeObject(BaseClassShapes):
     @side.setter
     def side(self, new_side: int|float):
         if not isinstance(new_side, (int, float)):
-            raise TypeError("Height must be an integer or float")
+            raise TypeError("Side length must be an integer or float")
         if isinstance(new_side, bool):
             raise TypeError("Side length can not be a boolean value")
         elif new_side <= 0:
@@ -38,3 +38,11 @@ class CubeObject(BaseClassShapes):
             return True
         else:
             return False
+    def translate(self, new_x, new_y):
+        if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
+            raise TypeError(f"Coordinates must be int or float")
+        else:
+            if 10 < new_x < -10 or 10 < new_y < -10:
+                raise ValueError("Acceptable range for coordinates is between 10 and -10")
+        self.x = new_x
+        self.y = new_y

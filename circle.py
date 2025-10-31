@@ -19,7 +19,7 @@ class CircleObject(BaseClassShapes):
     def radius(self, new_radius: int|float):
         if not isinstance(new_radius, (int, float)):
             raise TypeError("Radius must be an integer or float")
-        if isinstance(new_radius, bool):
+        elif isinstance(new_radius, bool):
             raise TypeError("Radius can not be a boolean value")
         elif new_radius <= 0:
             raise ValueError("Radius must be greater than 0")
