@@ -6,7 +6,7 @@ from base_class import BaseClassShapes
 
 class Shape2DPlotter(BaseClassShapes):
     """The primary purpose of this class is to plot shapes created from the CircleObject class and/or the RectangleObject class.
-    Thusly, this class only works in tandem with the aforementioned classes which will need to be imported. """
+    Thusly, this class only works in tandem with the aforementioned classes which will need to be imported."""
     def __init__(self, shape_list: list=[]):
         super().__init__()
         self.shape_list = shape_list
