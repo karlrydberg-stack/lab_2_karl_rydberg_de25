@@ -1,6 +1,8 @@
 from base_class import BaseClassShapes
 
 class CubeObject(BaseClassShapes):
+    """This is a class which provide several primary and supporting features. Primarily it is used to generate representations
+    of a cube and provide related data - like its area and perimeter. """
     def __init__(self, side:int|float, x: int|float=0, y: int|float=0):
         super().__init__(x, y)
         self.side = side
