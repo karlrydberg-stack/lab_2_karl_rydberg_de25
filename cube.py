@@ -40,7 +40,7 @@ class CubeObject(BaseClassShapes):
             return True
         else:
             return False
-    def translate(self, new_x: int|float, new_y: int|float):
+    def translate(self, new_x: int|float, new_y: int|float): # Exists solely as an override of the similar method in the parent class
         if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
             raise TypeError(f"Coordinates must be int or float")
         else:

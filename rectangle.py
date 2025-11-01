@@ -31,7 +31,7 @@ class RectangleObject(BaseClassShapes):
     def width(self, new_width: int|float):
         if not isinstance(new_width, (int, float)):
             raise TypeError("Width must be an integer or float")
-        if isinstance(new_width, bool):
+        elif isinstance(new_width, bool):
             raise TypeError("Width can not be a boolean value")
         elif new_width <= 0:
             raise ValueError("Width must be greater than 0")

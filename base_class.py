@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 class BaseClassShapes:
+    """ This is intended as a parent class and it provides methods relevant for several child classes. """
     def __init__(self, x=0, y=0, arrow_list=[]):
         self.x = x
         self.y = y
@@ -43,6 +44,6 @@ class BaseClassShapes:
         else:
             if 10 < new_x < -10 or 10 < new_y < -10:
                 raise ValueError("Acceptable range for coordinates is between 10 and -10")
-        self.arrow_list.append((self.x, self.y, new_x - self.x, new_y - self.y))
+        self.arrow_list.append((self.x, self.y, new_x - self.x, new_y - self.y)) # Adds data regarding arrowbase and delta x and y
         self.x = new_x
         self.y = new_y

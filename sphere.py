@@ -1,4 +1,5 @@
 from base_class import BaseClassShapes
+
 class SphereObject(BaseClassShapes):
     def __init__(self, radius: int|float, x: int|float=0, y: int|float=0):
         """This is a class which enable the creation of spherical objects. It provides several related methods which give additional
@@ -39,7 +40,7 @@ class SphereObject(BaseClassShapes):
             return True
         else:
             return False
-    def translate(self, new_x: int|float, new_y: int|float):
+    def translate(self, new_x: int|float, new_y: int|float): # Exists solely as an override of the similar method in the parent class
         if not isinstance(new_x, (int, float)) or not isinstance(new_y, (int, float)):
             raise TypeError(f"Coordinates must be int or float")
         else:
